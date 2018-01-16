@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html>
   <body>
     <div id="app-4">
@@ -22,5 +23,33 @@
     }
   })
       </script>
+    </body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="app-5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script>
+            var app5 = new Vue({
+                el: '#app-5',
+                data: {
+                    message: 'How about we reverse this sentence, shall we?'
+                },
+                methods: {
+                    reverseMessage: function (){
+                        this.message = this.message.split('').reverse().join('')
+                    }
+                }
+            })
+        </script>
     </body>
 </html>
