@@ -1,5 +1,77 @@
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id = "app">
+      <p>{{ message }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'First attempt with Vue.js!'
+        }
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+<html>
+  <body>
+    <div id = "app-2">
+      <span v-bind:title="message">
+        Hover over me for a few seconds to see the 
+        last time the page was loaded.
+      </span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: 'The last time this page was loaded was on ' + 
+          new Date().toLocaleString()
+        }
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+<html>
+  <body>
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var app3 = new Vue({
+        el: '#app-3',
+        data: {
+          seen: true
+          //if true is changed to false then Now you see me
+          // will disappear  
+        }
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
 <html>
   <body>
     <div id="app-4">
@@ -18,19 +90,20 @@
         { text: 'Learn Vue.js' },
         { text: 'Play with Vue.js' },
         { text: 'Become the GOAT with Vue.js' }
-
+        //Go into inspect and console
+        //app4.todos.push({ text: 'You are the GOAT!' })
       ]
     }
   })
       </script>
     </body>
-</html> -->
+</html>
 
 
 
 
 
-<!-- <!DOCTYPE html>
+
 <html>
     <body>
         <div id="app-5">
@@ -52,7 +125,7 @@
             })
         </script>
     </body>
-</html> -->
+</html>
 
 <html>
     <body>
@@ -70,4 +143,44 @@
             })
         </script>
     </body>
+</html>
+
+
+
+
+
+<html>
+  <body>
+    <div id = "app-7">
+      <ol>
+        <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id">
+      </todo-item>
+      </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component('todo-item', {
+          props:['todo'],
+          template:'<li>{{ todo.text }}</li>'
+        })
+      </script>
+    <script>
+      var app7 = new Vue({
+        el: '#app-7',
+        data: {
+          groceryList: [
+            {id: 0, text: 'Milk' },
+            {id: 1, text: 'Cereal' },
+            {id: 2, text: 'Bread' },
+            {id: 3, text: 'Peanut Butter' },
+            {id: 4, text: 'Jelly' },
+            {id: 5, text: 'Water' }
+          ]
+        }
+      })
+    </script>
+  </body>
 </html>
