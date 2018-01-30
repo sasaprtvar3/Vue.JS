@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <body>
     <div id = "app">
@@ -182,5 +182,31 @@
         }
       })
     </script>
+  </body>
+</html> -->
+
+
+
+
+
+<html>
+  <body>
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <script>
+        var obj = {
+          foo: 'bar'
+        }
+        Object.freeze(obj)
+
+        new Vue({
+          el: '#app',
+          data () {
+            return {
+              obj
+            }
+          }
+        })
+      </script>
+        <div id = apps
   </body>
 </html>
